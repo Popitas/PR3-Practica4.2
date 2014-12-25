@@ -116,11 +116,10 @@ public class frmPrincipal extends javax.swing.JFrame {
                         .addComponent(scrollValores)
                         .addGap(12, 12, 12))
                     .addGroup(panelResultadoLayout.createSequentialGroup()
-                        .addComponent(lblValores)
-                        .addGap(0, 369, Short.MAX_VALUE))))
-            .addGroup(panelResultadoLayout.createSequentialGroup()
-                .addComponent(checkOrdenar)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblValores)
+                            .addComponent(checkOrdenar))
+                        .addGap(0, 364, Short.MAX_VALUE))))
         );
         panelResultadoLayout.setVerticalGroup(
             panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
