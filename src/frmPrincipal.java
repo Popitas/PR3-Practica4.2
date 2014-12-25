@@ -112,24 +112,25 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(panelResultadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollValores)
                     .addGroup(panelResultadoLayout.createSequentialGroup()
-                        .addGroup(panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(checkOrdenar)
-                            .addComponent(lblValores))
-                        .addGap(352, 352, 352)))
-                .addGap(12, 12, 12))
+                        .addComponent(scrollValores)
+                        .addGap(12, 12, 12))
+                    .addGroup(panelResultadoLayout.createSequentialGroup()
+                        .addComponent(lblValores)
+                        .addGap(0, 369, Short.MAX_VALUE))))
+            .addGroup(panelResultadoLayout.createSequentialGroup()
+                .addComponent(checkOrdenar)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelResultadoLayout.setVerticalGroup(
             panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelResultadoLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(lblValores)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(scrollValores, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(checkOrdenar)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         getContentPane().add(panelResultado, java.awt.BorderLayout.CENTER);
@@ -165,10 +166,8 @@ public class frmPrincipal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmPrincipal().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new frmPrincipal().setVisible(true);
         });
     }
 
