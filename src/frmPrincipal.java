@@ -96,6 +96,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         panelValores.setLayout(new java.awt.BorderLayout());
 
+        txtValores.setEditable(false);
         txtValores.setColumns(20);
         txtValores.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
         txtValores.setLineWrap(true);
