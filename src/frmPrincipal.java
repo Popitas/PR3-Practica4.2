@@ -21,10 +21,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         txtUmbral = new javax.swing.JTextField();
         btnEstablecer = new javax.swing.JButton();
         lblError = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        separatorUmbralResultado = new javax.swing.JSeparator();
         lblAyuda = new javax.swing.JLabel();
         panelResultado = new javax.swing.JPanel();
-        panelValores = new javax.swing.JPanel();
         scrollValores = new javax.swing.JScrollPane();
         txtValores = new javax.swing.JTextArea();
         checkOrdenar = new javax.swing.JCheckBox();
@@ -43,7 +42,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblError.setForeground(new java.awt.Color(206, 0, 0));
         lblError.setText("oulululililiu");
 
-        jSeparator1.setForeground(new java.awt.Color(185, 185, 185));
+        separatorUmbralResultado.setForeground(new java.awt.Color(185, 185, 185));
 
         lblAyuda.setText("?");
 
@@ -55,7 +54,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addGroup(panelUmbralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelUmbralLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jSeparator1)
+                        .addComponent(separatorUmbralResultado)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblAyuda))
                     .addGroup(panelUmbralLayout.createSequentialGroup()
@@ -86,15 +85,13 @@ public class frmPrincipal extends javax.swing.JFrame {
                     .addComponent(lblAyuda)
                     .addGroup(panelUmbralLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(separatorUmbralResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(panelUmbral, java.awt.BorderLayout.PAGE_START);
 
         panelResultado.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 10, 10));
-
-        panelValores.setLayout(new java.awt.BorderLayout());
 
         txtValores.setEditable(false);
         txtValores.setColumns(20);
@@ -121,24 +118,17 @@ public class frmPrincipal extends javax.swing.JFrame {
                             .addComponent(checkOrdenar)
                             .addComponent(lblValores))
                         .addGap(352, 352, 352)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelValores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
         panelResultadoLayout.setVerticalGroup(
             panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelResultadoLayout.createSequentialGroup()
-                .addGroup(panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelResultadoLayout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(panelValores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelResultadoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblValores)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(scrollValores, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkOrdenar)))
+                .addContainerGap()
+                .addComponent(lblValores)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(scrollValores, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(checkOrdenar)
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
@@ -185,15 +175,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEstablecer;
     private javax.swing.JCheckBox checkOrdenar;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAyuda;
     private javax.swing.JLabel lblError;
     private javax.swing.JLabel lblUmbral;
     private javax.swing.JLabel lblValores;
     private javax.swing.JPanel panelResultado;
     private javax.swing.JPanel panelUmbral;
-    private javax.swing.JPanel panelValores;
     private javax.swing.JScrollPane scrollValores;
+    private javax.swing.JSeparator separatorUmbralResultado;
     private javax.swing.JTextField txtUmbral;
     private javax.swing.JTextArea txtValores;
     // End of variables declaration//GEN-END:variables
