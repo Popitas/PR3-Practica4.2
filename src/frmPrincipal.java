@@ -166,8 +166,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new frmPrincipal().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                new frmPrincipal().setVisible(true);
+            }
         });
     }
 
