@@ -9,7 +9,7 @@ public class GeneraVector {
         Random r = new java.util.Random();
 
         for (int i = 0; i < tamaño; i++) {
-            vector[i] = r.nextFloat();
+            vector[i] = r.nextFloat() * (max-min) + min;
         }
 
         return new Vector(vector);
