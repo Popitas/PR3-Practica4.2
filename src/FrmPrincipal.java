@@ -230,12 +230,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void mostrarResultado() {
+        txtValores.setText("");
+        
         if (isNumeric(txtUmbral.getText())) {
             if (App.getVector().contiene(Float.parseFloat(txtUmbral.getText()))) {
                 imprimirResultado();
                 lblError.setText("");
             } else {
-                lblError.setText("Umbral no contenido en el vector.");
+                lblError.setText("Umbral no contenido en el vector.");                
             }
         } else {
             lblError.setText("Por favor, introduzca un número real.");
