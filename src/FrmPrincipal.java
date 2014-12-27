@@ -3,12 +3,12 @@ import com.sun.glass.events.KeyEvent;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
 
-public class frmPrincipal extends javax.swing.JFrame {
+public class FrmPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmPrincipal
+     * Creates new form FrmPrincipal
      */
-    public frmPrincipal() {
+    public FrmPrincipal() {
         initComponents();
     }
 
@@ -210,4 +210,5 @@ public class frmPrincipal extends javax.swing.JFrame {
         formatter.parseObject(input, pos);
         return input.length() == pos.getIndex();
     }
+    
 }

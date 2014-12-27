@@ -7,7 +7,7 @@ public class App {
 
     public static void main(String[] args) {
         vector = GeneraVector.generaVectorAleatorio(50, 200);
-        JFrame frmPrincipal = new frmPrincipal();
+        JFrame frmPrincipal = new FrmPrincipal();
 
         frmPrincipal.setLocationRelativeTo(null);
         frmPrincipal.setVisible(true);
