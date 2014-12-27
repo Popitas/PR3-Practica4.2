@@ -1,5 +1,5 @@
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import javax.swing.UIManager;
 
 public class FrmPrincipal extends javax.swing.JFrame {
@@ -201,15 +201,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtUmbralKeyPressed
 
-    private void checkOrdenarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkOrdenarItemStateChanged
-    }//GEN-LAST:event_checkOrdenarItemStateChanged
-
     private void lblVectorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVectorMouseClicked
         DialVectorOriginal dialVectorOriginal = new DialVectorOriginal(this, true);
 
         dialVectorOriginal.setLocationRelativeTo(null);
         dialVectorOriginal.setVisible(true);
     }//GEN-LAST:event_lblVectorMouseClicked
+
+    private void checkOrdenarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkOrdenarItemStateChanged
+        mostrarResultado();
+    }//GEN-LAST:event_checkOrdenarItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEstablecer;

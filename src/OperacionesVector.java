@@ -19,16 +19,17 @@ public class OperacionesVector {
         }
 
         int[] posiciones = division(vector, linf, lsup);
-
+        
+        if (valor == vector[posiciones[0] + 1]) {
+            return posiciones[0] + 1;
+        }
+        
         if (vector[posiciones[0] + 1] > valor) {
             return buscaMenoresRec(vector, linf, posiciones[0], valor);
-        }
-
-        if (vector[posiciones[0] + 1] < valor) {
+        } else {
             return buscaMenoresRec(vector, posiciones[1], lsup, valor);
         }
 
-        return 0;
     }
 
     private static int[] division(float[] vector, int linf, int lsup) {
@@ -112,5 +113,5 @@ public class OperacionesVector {
         System.arraycopy(array, 0, copia, 0, array.length);
         return copia;
     }
-
+    
 }
