@@ -38,7 +38,7 @@ public class Vector {
         return false;
     }
 
-    public String mostrarOriginal() {
+    public String mostrarVectorOriginal() {
         StringBuilder stringResult = new StringBuilder();
 
         for (int i = 0; i < v.length; i++) {

@@ -8,7 +8,7 @@ public class DialVectorOriginal extends javax.swing.JDialog {
     public DialVectorOriginal(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        txtVector.setText(App.getVector().mostrarOriginal());
+        txtVector.setText(App.getVector().mostrarVectorOriginal());
     }
 
     /**
