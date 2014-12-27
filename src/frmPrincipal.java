@@ -1,3 +1,8 @@
+
+import com.sun.glass.events.KeyEvent;
+import java.text.NumberFormat;
+import java.text.ParsePosition;
+
 public class frmPrincipal extends javax.swing.JFrame {
 
     /**
@@ -37,10 +42,21 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         lblUmbral.setText("Umbral");
 
+        txtUmbral.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUmbralKeyPressed(evt);
+            }
+        });
+
         btnEstablecer.setText("Establecer");
+        btnEstablecer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEstablecerMouseClicked(evt);
+            }
+        });
 
         lblError.setForeground(new java.awt.Color(206, 0, 0));
-        lblError.setText("oulululililiu");
+        lblError.setText("    ");
 
         separatorUmbralResultado.setForeground(new java.awt.Color(185, 185, 185));
 
@@ -51,25 +67,24 @@ public class frmPrincipal extends javax.swing.JFrame {
         panelUmbralLayout.setHorizontalGroup(
             panelUmbralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelUmbralLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(panelUmbralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelUmbralLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(separatorUmbralResultado)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblAyuda))
-                    .addGroup(panelUmbralLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(lblUmbral)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(6, 6, 6))
-            .addGroup(panelUmbralLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtUmbral, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEstablecer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
-                .addComponent(lblError)
-                .addContainerGap())
+                        .addGap(0, 514, Short.MAX_VALUE))
+                    .addGroup(panelUmbralLayout.createSequentialGroup()
+                        .addGroup(panelUmbralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelUmbralLayout.createSequentialGroup()
+                                .addComponent(separatorUmbralResultado)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblAyuda))
+                            .addGroup(panelUmbralLayout.createSequentialGroup()
+                                .addComponent(txtUmbral, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnEstablecer)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblError)))
+                        .addContainerGap())))
         );
         panelUmbralLayout.setVerticalGroup(
             panelUmbralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,11 +96,9 @@ public class frmPrincipal extends javax.swing.JFrame {
                     .addComponent(btnEstablecer)
                     .addComponent(lblError))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelUmbralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAyuda)
-                    .addGroup(panelUmbralLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(separatorUmbralResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(panelUmbralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(separatorUmbralResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAyuda))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -102,6 +115,11 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         checkOrdenar.setSelected(true);
         checkOrdenar.setText("Ordenar de mayor a menor");
+        checkOrdenar.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                checkOrdenarStateChanged(evt);
+            }
+        });
 
         lblValores.setText("Valores menores que el umbral");
 
@@ -114,12 +132,12 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addGroup(panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelResultadoLayout.createSequentialGroup()
                         .addComponent(scrollValores)
-                        .addGap(12, 12, 12))
+                        .addContainerGap())
                     .addGroup(panelResultadoLayout.createSequentialGroup()
                         .addGroup(panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblValores)
                             .addComponent(checkOrdenar))
-                        .addGap(0, 364, Short.MAX_VALUE))))
+                        .addGap(0, 360, Short.MAX_VALUE))))
         );
         panelResultadoLayout.setVerticalGroup(
             panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,41 +155,27 @@ public class frmPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void btnEstablecerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstablecerMouseClicked
+        if (isNumeric(txtUmbral.getText())) {
+            mostrarResultado();
+        } else {
+            lblError.setText("Por favor, introduzca un número real.");
         }
-        //</editor-fold>
+    }//GEN-LAST:event_btnEstablecerMouseClicked
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+    private void checkOrdenarStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkOrdenarStateChanged
+        if (checkOrdenar.isSelected()) {
+            txtValores.setText(App.getVector().mostrarVector(true, true));
+        } else {
+            txtValores.setText(App.getVector().mostrarVector(true, false));
+        }
+    }//GEN-LAST:event_checkOrdenarStateChanged
 
-            public void run() {
-                new frmPrincipal().setVisible(true);
-            }
-        });
-    }
+    private void txtUmbralKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUmbralKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btnEstablecerMouseClicked(null);
+        }
+    }//GEN-LAST:event_txtUmbralKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEstablecer;
@@ -187,4 +191,23 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField txtUmbral;
     private javax.swing.JTextArea txtValores;
     // End of variables declaration//GEN-END:variables
+
+    private void mostrarResultado() {
+        Vector vector = App.getVector();
+        OperacionesVector.buscaMenores(vector, Long.parseLong(txtUmbral.getText()));
+
+        if (checkOrdenar.isSelected()) {
+            txtValores.setText(vector.mostrarVector(true, true));
+        } else {
+            txtValores.setText(vector.mostrarVector(true, false));
+        }
+    }
+
+    private boolean isNumeric(String input) {
+        NumberFormat formatter = NumberFormat.getInstance();
+        ParsePosition pos = new ParsePosition(0);
+
+        formatter.parseObject(input, pos);
+        return input.length() == pos.getIndex();
+    }
 }
