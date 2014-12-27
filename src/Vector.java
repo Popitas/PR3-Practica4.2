@@ -1,18 +1,19 @@
 
 public class Vector {
 
-    private float[] v, menoresOrdenado;
+    private final float[] v;
+    private float[] menoresOrdenado;
     private int posicion;
 
     public Vector(float[] vector) {
         v = vector;
     }
 
-    void establecerPosicion(int posicion) {
+    public void establecerPosicion(int posicion) {
         this.posicion = posicion;
     }
 
-    void establecerMenoresOrdenado(float[] vector) {
+    public void establecerMenoresOrdenado(float[] vector) {
         menoresOrdenado = vector;
     }
 
@@ -37,29 +38,45 @@ public class Vector {
         return false;
     }
 
-    public String mostrarVector(boolean menores, boolean ordenado) {
-        if (menores) {
-            if (ordenado) {
-                return mostrarVector(menoresOrdenado, posicion);
-            } else {
-                return mostrarVector(v, posicion);
-            }
-        } else {
-            return mostrarVector(v, v.length);
-        }
-    }
-
-    private String mostrarVector(float[] vector, int lsup) {
+    public String mostrarOriginal() {
         StringBuilder stringResult = new StringBuilder();
 
-        for (int i = 0; i < lsup; i++) {
-            if (i < lsup - 1) {
-                stringResult.append(vector[i]).append(", ");
+        for (int i = 0; i < v.length; i++) {
+            if (i < v.length - 1) {
+                stringResult.append(v[i]).append(", ");
             } else {
-                stringResult.append(vector[i]);
+                stringResult.append(v[i]);
             }
         }
 
+        return stringResult.toString();
+    }
+
+    public String mostrarMenoresDescen() {
+        StringBuilder stringResult = new StringBuilder();
+
+        for (int i = menoresOrdenado.length - 1; i >= 0; i--) {
+            if (i > 0) {
+                stringResult.append(menoresOrdenado[i]).append(", ");
+            } else {
+                stringResult.append(menoresOrdenado[i]);
+            }
+        }
+
+        return stringResult.toString();
+    }
+
+    public String mostrarMenoresAscen() {
+        StringBuilder stringResult = new StringBuilder();
+
+        for (int i = 0; i < menoresOrdenado.length; i++) {
+            if (i < menoresOrdenado.length - 1) {
+                stringResult.append(menoresOrdenado[i]).append(", ");
+            } else {
+                stringResult.append(menoresOrdenado[i]);
+            }
+        }
+        
         return stringResult.toString();
     }
 
